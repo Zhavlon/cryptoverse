@@ -1,8 +1,16 @@
 import React from "react";
 import { Switch, Route, Link } from "react-router-dom";
 import { Layout, Typography, Space } from "antd";
+import "./App.css";
 
-import { Navbar } from "./components";
+import {
+	Navbar,
+	Homepage,
+	Exchanges,
+	CryptoDetails,
+	Cryptocurrencies,
+	News,
+} from "./components";
 
 function App(props) {
 	return (
@@ -10,7 +18,29 @@ function App(props) {
 			<div className="navbar">
 				<Navbar />
 			</div>
-			<div className="main"></div>
+			<div className="main">
+				<Layout>
+					<div className="rotes">
+						<Switch>
+							<Route exact path="/">
+								<Homepage />
+							</Route>
+							<Route exact path="/exchanges">
+								<Exchanges />
+							</Route>
+							<Route exact path="/cryptocurrencies">
+								<Cryptocurrencies />
+							</Route>
+							<Route exact path="/crypto/:coinId">
+								<CryptoDetails />
+							</Route>
+							<Route exact path="/news">
+								<News />
+							</Route>
+						</Switch>
+					</div>
+				</Layout>
+			</div>
 			<div className="footer"></div>
 		</div>
 	);
