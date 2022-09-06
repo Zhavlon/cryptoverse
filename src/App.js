@@ -20,7 +20,7 @@ function App(props) {
 			</div>
 			<div className="main">
 				<Layout>
-					<div className="rotes">
+					<div className="routes">
 						<Switch>
 							<Route exact path="/">
 								<Homepage />
